@@ -11,7 +11,7 @@ import com.facebook.sonar.core.SonarClient;
 import com.facebook.sonar.plugins.inspector.DescriptorMapping;
 import com.facebook.sonar.plugins.inspector.InspectorSonarPlugin;
 import com.facebook.sonar.plugins.network.NetworkSonarPlugin;
-import com.facebook.sonar.plugins.network.SonarOkhttpInterceptor;
+import com.facebook.sonar.plugins.network.okhttp.SonarOkhttpInterceptor;
 import com.facebook.sonar.plugins.sharedpreferences.SharedPreferencesSonarPlugin;
 import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;

@@ -8,6 +8,7 @@
 
 package com.facebook.sonar.plugins.network;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface NetworkReporter {
 
   void reportResponse(ResponseInfo responseInfo);
 
-  public class Header {
+  class Header {
     public final String name;
     public final String value;
 
@@ -31,13 +32,16 @@ public interface NetworkReporter {
     }
   }
 
-  public class RequestInfo {
+  class RequestInfo {
     public String requestId;
     public long timeStamp;
     public List<Header> headers = new ArrayList<>();
     public String method;
     public String uri;
-    public byte[] body;
+    public @Nullable byte[] body;
+    public int bodyLength = -1;
+    public @Nullable String message = null;
+    public @Nullable Integer responseCode = null;
 
     public Header getFirstHeader(final String name) {
       for (Header header : headers) {
@@ -49,7 +53,7 @@ public interface NetworkReporter {
     }
   }
 
-  public class ResponseInfo {
+  class ResponseInfo {
     public String requestId;
     public long timeStamp;
     public int statusCode;

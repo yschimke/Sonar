@@ -25,7 +25,7 @@ client.addPlugin(networkSonarPlugin);
 If you are using the popular OkHttp library, you can use the Interceptors system to automatically hook into your existing stack.
 
 ```java
-import com.facebook.sonar.plugins.network.SonarOkhttpInterceptor;
+import com.facebook.sonar.plugins.network.okhttp.SonarOkhttpInterceptor;
 
 new OkHttpClient.Builder()
     .addNetworkInterceptor(new SonarOkhttpInterceptor(networkSonarPlugin))
