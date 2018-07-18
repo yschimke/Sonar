@@ -69,7 +69,7 @@ public class SonarOkhttpListener extends EventListener {
         info.uri = request.url().toString();
         if (request.body() != null) {
             info.body = bodyToByteArray(request);
-        }
+        }   
 
         return info;
     }
