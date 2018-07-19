@@ -335,7 +335,7 @@ export default class CertificateProvider {
         cert: fs.readFileSync(serverCert),
         ca: fs.readFileSync(caCert),
         requestCert: true,
-        rejectUnauthorized: true, // can be false if necessary as we don't strictly need to verify the client
+        rejectUnauthorized: false, // can be false if necessary as we don't strictly need to verify the client
       };
     });
   }

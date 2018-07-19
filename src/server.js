@@ -12,6 +12,7 @@ import type {ClientQuery} from './Client.js';
 import CertificateProvider from './utils/CertificateProvider';
 import {RSocketServer, ReactiveSocket} from 'rsocket-core';
 import RSocketTCPServer from 'rsocket-tcp-server';
+import RSocketWebSocketServer from 'rsocket-websocket-server';
 import Client from './Client.js';
 import {RecurringError} from './utils/errors';
 
@@ -95,14 +96,21 @@ export default class Server extends EventEmitter {
         });
       return transportServer;
     };
+     const transport = new RSocketTCPServer({
+       port: port,
+       serverFactory: serverFactory,
+     });
+
+    // server: ...
+    // https://github.com/websockets/ws
+//     const transport = new RSocketWebSocketServer({
+//       port: port,
+//     });
     const rsServer = new RSocketServer({
       getRequestHandler: sslConfig
         ? this._trustedRequestHandler
         : this._untrustedRequestHandler,
-      transport: new RSocketTCPServer({
-        port: port,
-        serverFactory: serverFactory,
-      }),
+      transport: transport,
     });
 
     rsServer.start();

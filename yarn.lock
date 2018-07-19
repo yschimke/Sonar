@@ -4349,6 +4349,16 @@ rsocket-types@^0.0.6:
     fbjs "^0.8.12"
     rsocket-flowable "^0.0.6"
 
+rsocket-websocket-server@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/rsocket-websocket-server/-/rsocket-websocket-server-0.0.6.tgz#5fcde510643007a3ca652500582bc62a22346149"
+  dependencies:
+    fbjs "^0.8.12"
+    rsocket-core "^0.0.6"
+    rsocket-flowable "^0.0.6"
+    rsocket-types "^0.0.6"
+    ws "^2.3.1"
+
 rsvp@^3.3.3:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
@@ -5259,7 +5269,7 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@^2.0.3:
+ws@^2.0.3, ws@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-2.3.1.tgz#6b94b3e447cb6a363f785eaf94af6359e8e81c80"
   dependencies:

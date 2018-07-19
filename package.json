@@ -66,6 +66,7 @@
     "redux": "^4.0.0",
     "rsocket-core": "^0.0.6",
     "rsocket-tcp-server": "^0.0.6",
+    "rsocket-websocket-server": "^0.0.6",
     "socket.io": "^2.0.4",
     "string-natural-compare": "^2.0.2",
     "tmp": "^0.0.33",
